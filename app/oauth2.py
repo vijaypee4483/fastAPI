@@ -1,4 +1,4 @@
-from jose import  JWTError, jwt
+from jose import JWTError, jwt
 from datetime import datetime, timedelta
 from . import schemas, database, models, config
 from fastapi import Depends, status, HTTPException

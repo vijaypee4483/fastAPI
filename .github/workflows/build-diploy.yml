@@ -8,5 +8,11 @@ jobs:
     steps:
       - name: pulling git repo
         uses: actions/checkout@v2
-      - name: say hi to everyone
-        run: echo "hello everyone"
+      - name: Install python version 3.8
+        uses:actions/setup-python@v2
+        with:
+          pyhton-version: "3.8"
+      - name: update pip
+        run: python -m pip install --upgrade pip
+      - name: install all dependencies
+        run: pip install -r requirements.txt

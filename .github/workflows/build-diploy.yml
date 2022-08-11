@@ -17,6 +17,7 @@ jobs:
       ACCESS_TOKEN_EXPIRE_MINUTES: ${{secrets.ACCESS_TOKEN_EXPIRE_MINUTES}}
 
     services:
+      - name: create postgres database
       postgres:
         image: postgres
         env:

@@ -43,13 +43,4 @@ jobs:
       - name: install all dependencies
         run: pip install -r requirements.txt
       - name: test with pytest
-        run: |
-          . scl_source enable devtoolset-7 || true
-          . scl_source enable llvm-toolset-6.0 || true
-          . /etc/profile.d/modules.sh || true
-          module load mpi
-          . $INSTALL_DIR/bin/thisbdm.sh
-          git config --system user.name "vijayprak"
-          git config --system user.email "vp.gd.msw@gmail.com"
-          xvfb-run -d -s "-screen 0 2560x1440x24" make run-demos
-          pytest 
+        run: pytest

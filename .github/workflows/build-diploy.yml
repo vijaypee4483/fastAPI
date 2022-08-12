@@ -17,12 +17,11 @@ jobs:
       ACCESS_TOKEN_EXPIRE_MINUTES: ${{secrets.ACCESS_TOKEN_EXPIRE_MINUTES}}
 
     services:
-      - name: create postgres database
       postgres:
-        image: postgres
+        image: postgres-latest
         env:
-          POSTGRES_PASSWORD: ${{secrets.DATABASE_PASSWORD}}
           POSTGRES_DB: ${{secrets.DATABASE_NAME}}_test
+          POSTGRES_PASSWORD: ${{secrets.DATABASE_PASSWORD}}
         ports:
           - 5432:5432
         options: >-

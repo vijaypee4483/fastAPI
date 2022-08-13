@@ -40,7 +40,7 @@ app.include_router(vote.router)
 
 @app.get("/")
 def root():
-    return {"message": "Welcome to my api"}
+    return {"message": "Succesfully deployed CI/CD Pipiline to Heroku"}
 
 
 
